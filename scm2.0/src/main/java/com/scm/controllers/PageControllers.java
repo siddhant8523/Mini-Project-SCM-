@@ -8,19 +8,19 @@ public class PageControllers {
 
     @RequestMapping("/home")
     public String home(){
-    String str="Home Page handler";
-    return str;
+    System.out.println("Home Page handler");
+    return "home";
     }
 
     
     @RequestMapping("/about")
     public String aboutPage(){
-    String str="About Page handler";
-    return str;
+    System.out.println("About Page handler");
+    return "about";
     }
     @RequestMapping("/services")
     public String servicesPage(){
-    String str="Services Page handler";
-    return str;
+    System.out.println("Services Page handler");
+    return "services";
     }
 }
