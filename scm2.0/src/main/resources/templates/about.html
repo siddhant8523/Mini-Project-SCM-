@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base:: parent}">
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Page</title>
 </head>
-<body>
-    <h1>This is About Page</h1>
+<body> 
+    <section id="content">
+        <h1>Hewllo This About Page</h1>
+        <h2>This About offered by SCM</h2>
+ </section>
+    <script>
+        console.log("about page");
+        console.log("about page Second");
+    </script>
 </body>
 </html>

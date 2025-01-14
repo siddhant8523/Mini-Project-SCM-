@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="parent" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base Page</title>
+    <title data-th-replace="${title}">SCM</title>
+    
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- This is for main Content -->
-
+    <!-- <div data-th-replace="~{navbar::navbar}"></div>
+    <div data-th-replace="~{${content}}"></div>
+ -->
+    <section data-th-replace="${content}"></section>
 
 
     <!-- This is flowbite CDN Java script -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <th:block data-th-replace="${script}"></th:block> 
 </body>
 </html>

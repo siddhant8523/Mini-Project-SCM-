@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html> 
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Service Page</title>
 </head>
 <body>
-    <h1>This is Services page</h1>
+    <section id="content">
+        <h1>Hewllo This Services Page</h1>
+        <h2>This services offered by SCM</h2>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, impedit quos asperiores praesentium doloremque voluptatem alias sed corporis adipisci mollitia totam unde! Hic repellendus quia fuga voluptatum deserunt autem assumenda!
+    </section>
+    <script>
+        console.log("Services Page")
+    </script>
 </body>
 </html>
