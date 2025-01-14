@@ -1,6 +1,7 @@
 package com.scm.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -23,4 +24,18 @@ public class PageControllers {
     System.out.println("Services Page handler");
     return "services";
     }
+    @GetMapping("/login")
+    public String login(){
+        return new String("login");
+    }
+    @GetMapping("/contact")
+    public String contact(){
+        return new String("contact");
+    }
+    @GetMapping("/register")
+    public String register(){
+        return new String("register");
+    }
+
+
 }
