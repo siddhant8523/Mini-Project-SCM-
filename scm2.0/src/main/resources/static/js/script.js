@@ -1,12 +1,18 @@
 console.log("Script Loaded");
 
+// Changing The Website Theme 
+
 let currentTheme=getTheme();
 
-changeTheme();
+document.addEventListener("DOMContentLoaded",()=>{
+    changeTheme();
+    });
+
 function changeTheme(){
+    changePageTheme(currentTheme,currentTheme)
     const changeThemeButton=document.querySelector("#theme_change_button");
+    const oldTheme=currentTheme;
     changeThemeButton.addEventListener("click",(event)=>{
-        const oldTheme=currentTheme;
         console.log("Theme change on clicking");
         if(currentTheme=="dark"){
             currentTheme="light";
@@ -14,10 +20,7 @@ function changeTheme(){
         else{
             currentTheme="dark";
         }
-
-        setTheme(currentTheme);
-        document.querySelector("html").classList.remove(oldTheme);
-        document.querySelector("html").classList.add(currentTheme);
+        changePageTheme(currentTheme,oldTheme);
     });
 
 
@@ -31,3 +34,13 @@ function getTheme(){
     let theme=localStorage.getItem("theme");
     return theme? theme:"light";
 }
+
+function changePageTheme(theme,oldTheme){
+    setTheme(currentTheme);
+    document.querySelector("html").classList.remove(oldTheme);
+    document.querySelector("html").classList.add(currentTheme);
+
+    document.querySelector("#theme_change_button").querySelector("span").textContent=currentTheme=="light"?"dark":"light";
+}
+
+//Ending the work of changing Theme 
