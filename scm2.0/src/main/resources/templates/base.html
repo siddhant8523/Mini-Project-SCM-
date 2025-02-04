@@ -18,9 +18,9 @@
     <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet">
 </head>
-<body class="dark:bg-gray-900 dark:text-white">
+<body class="dark:bg-gray-900 bg-gray-100 dark:text-white">
     <!-- This is for main Content -->
-     <div data-th-replace=" navbar::navbar "></div>
+     <div data-th-replace="~{navbar::navbar}"></div>
     <div class="p-4">
         <section data-th-replace="${content}"></section>
     </div>
