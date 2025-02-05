@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.scm.entities.User;
 import com.scm.forms.UserForm;
@@ -34,6 +35,10 @@ public class PageController {
     return "home";
     }
 
+    @GetMapping("/")
+    public String Index() {
+        return "redirect:/home";
+    }
     
     @RequestMapping("/about")
     public String aboutPage(){
