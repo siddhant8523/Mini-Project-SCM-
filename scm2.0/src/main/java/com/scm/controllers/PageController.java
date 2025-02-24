@@ -1,7 +1,5 @@
 package com.scm.controllers;
 
-import javax.naming.Binding;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.scm.entities.User;
 import com.scm.forms.UserForm;
@@ -50,6 +47,8 @@ public class PageController {
     System.out.println("Services Page handler");
     return "services";
     }
+
+    //Login
     @GetMapping("/login")
     public String login(){
         return new String("login");
@@ -58,6 +57,8 @@ public class PageController {
     public String contact(){
         return new String("contact");
     }
+
+    // Registration Page
     @GetMapping("/register")
     public String register(Model model){
         UserForm userForm=new UserForm();
@@ -69,6 +70,7 @@ public class PageController {
         return "register";
     }
 
+    // Ragistration Proccess
     //Handler for form register Requesting 
     @RequestMapping(value="/do-register", method=RequestMethod.POST)
     public String processResgister(@Valid @ModelAttribute UserForm userForm ,BindingResult result,HttpSession session){

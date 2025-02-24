@@ -17,7 +17,8 @@ public class SecurityConfig {
 
     @Autowired
     private SecurityCustomUserDetailService UserDetailService;
-
+    @Autowired
+    private OAuthenticationSuccessHandler  handler;
 
     //Authentication Provider Configuration
     @Bean
@@ -34,19 +35,19 @@ public class SecurityConfig {
             autherize.requestMatchers("/user/**").authenticated();
             autherize.anyRequest().permitAll();
         });
+        
         httpSecurity.formLogin(formLogin ->{
-
             //We can also do chain method accessing 
             formLogin.loginPage("/login");
             formLogin.loginProcessingUrl("/authenticate");
             formLogin.successForwardUrl("/user/dashboard");
             //formLogin.failureForwardUrl("/login?error=ture");
-            //formLogin.defaultSuccessUrl("/home");
+            formLogin.defaultSuccessUrl("/home");
             formLogin.usernameParameter("email");
             formLogin.passwordParameter("password");
-            
         });
 
+        //Log out Configuration
         httpSecurity.csrf(AbstractHttpConfigurer::disable);
         httpSecurity.logout(logout ->{
             logout.logoutUrl("/do-logout");
@@ -56,6 +57,7 @@ public class SecurityConfig {
         //OAuth Authentication
         httpSecurity.oauth2Login(oauth ->{
             oauth.loginPage("/login");
+            oauth.successHandler(handler);
         });
 
         return httpSecurity.build();
