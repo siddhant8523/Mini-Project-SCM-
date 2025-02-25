@@ -40,19 +40,14 @@ public class SecurityConfig {
             //We can also do chain method accessing 
             formLogin.loginPage("/login");
             formLogin.loginProcessingUrl("/authenticate");
-            formLogin.successForwardUrl("/user/dashboard");
+            formLogin.successForwardUrl("/user/profile");
             //formLogin.failureForwardUrl("/login?error=ture");
             formLogin.defaultSuccessUrl("/home");
             formLogin.usernameParameter("email");
             formLogin.passwordParameter("password");
         });
 
-        //Log out Configuration
-        httpSecurity.csrf(AbstractHttpConfigurer::disable);
-        httpSecurity.logout(logout ->{
-            logout.logoutUrl("/do-logout");
-            logout.logoutSuccessUrl("/login?logout=true");
-        });
+
 
         //OAuth Authentication
         httpSecurity.oauth2Login(oauth ->{
@@ -60,6 +55,12 @@ public class SecurityConfig {
             oauth.successHandler(handler);
         });
 
+        //Log out Configuration
+        httpSecurity.csrf(AbstractHttpConfigurer::disable);
+            httpSecurity.logout(logout ->{
+                logout.logoutUrl("/do-logout");
+                logout.logoutSuccessUrl("/login?logout=true");
+        });
         return httpSecurity.build();
     }
 

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
-    <!-- lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}" -->
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-th-text="${loggedInUser.name}">Profile Page</title>
-<!--  th:text="${loggedInUser.name} + ' | SCM'" -->
+    <title data-th-text="${loggedInUser.name} + ' | SCM'">Profile Page</title>
+<!--  th:text= -->
 </head>
 <body> 
-    <!-- <section id="content"> -->
+    <section id="content" class="pl-64 pt-40" style="height: 1000px;">
     <section>
         <h4>Hewllo This profile Page</h4>
         <h1 data-th-text="${loggedInUser.name}"></h1>
         <h2 data-th-text="${loggedInUser.email}"></h2>
  </section>
+ 
     <script>
         console.log("profile page");
     </script>
