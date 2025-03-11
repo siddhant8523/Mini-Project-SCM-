@@ -20,8 +20,8 @@ public class RootController {
 
     @Autowired
     private UserService userService;
-//(value ="/profile")
 
+    
     @ModelAttribute
     public void addLoggedInUserInformation(Model model,Authentication authentication){
         System.out.println("This is addLoggedInUserInformation method running from RootController....");

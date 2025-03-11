@@ -40,9 +40,9 @@ public class SecurityConfig {
             //We can also do chain method accessing 
             formLogin.loginPage("/login");
             formLogin.loginProcessingUrl("/authenticate");
-            formLogin.successForwardUrl("/user/profile");
+                formLogin.successForwardUrl("/user/profile");
             //formLogin.failureForwardUrl("/login?error=ture");
-            formLogin.defaultSuccessUrl("/home");
+            //formLogin.defaultSuccessUrl("/home");
             formLogin.usernameParameter("email");
             formLogin.passwordParameter("password");
         });

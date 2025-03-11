@@ -1,0 +1,60 @@
+<div data-th-fragment="contact">
+    <!-- Main Modal -->
+    <div id="view_contact_modal" tabindex="-1" aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-screen bg-black bg-opacity-50 backdrop-blur-sm transition-opacity duration-300">
+      
+      <div class="relative p-6 w-full max-w-lg bg-white dark:bg-gray-800 shadow-lg rounded-2xl transition-all transform scale-95">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center p-5 border-b dark:border-gray-600">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Contact Details</h3>
+          <button type="button" class="text-gray-400 hover:text-gray-900 dark:hover:text-white" onclick="closeContactModal()">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+          </button>
+        </div>
+  
+        <!-- Modal Body -->
+        <div class="p-5 text-center">
+          <img id="contact_image" class="w-32 h-32 rounded-full border-4 border-blue-500 shadow-md mx-auto" onerror="this.src='https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1741167718~exp=1741171318~hmac=bd10487d30b49b619334a57fbf3256ff538b0702ccfa8226391a01c25d0674c0&w=1380'" alt=""/>
+          <h3 id="contact_name" class="mt-3 text-2xl font-semibold text-gray-900 dark:text-white"></h3>
+          <p class="text-gray-500 dark:text-gray-300" id="contact_email"></p>
+          <p class="text-gray-500 dark:text-gray-300" id="contact_phone"></p>
+        </div>
+  
+        <!-- Contact Info -->
+        <div class="p-5">
+          <table class="w-full text-left text-gray-700 dark:text-gray-300">
+            <tbody>
+              <tr class="border-b">
+                <td class="py-3"><i class="fa-solid fa-location-dot text-blue-500"></i></td>
+                <td id="contact_address">Unknown Address</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-3"><i class="fa-solid fa-user text-blue-500"></i></td>
+                <td id="contact_about">No information</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-3"><i class="fa-regular fa-heart text-red-500"></i></td>
+                <td id="contact_favorite">Saved as favorite</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-3"><i class="fa-solid fa-earth-americas text-green-500"></i></td>
+                <td><a id="contact_website" class="text-blue-600 hover:underline">Unknown Website</a></td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-3"><i class="fa-brands fa-linkedin-in text-blue-600"></i></td>
+                <td><a id="contact_linkedIn" class="text-blue-600 hover:underline">Unknown LinkedIn</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- Modal Footer -->
+        <div class="flex justify-end p-5 border-t dark:border-gray-600">
+          <button onclick="closeContactModal()" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-lg text-gray-800">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

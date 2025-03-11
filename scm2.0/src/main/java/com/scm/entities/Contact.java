@@ -3,6 +3,8 @@ package com.scm.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +12,15 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Contact {
 
@@ -26,10 +36,12 @@ public class Contact {
     private String description;
     private Boolean favorite=false;
     private String websiteLink;
-    private String linkedinLink;
+    private String linkedInLink;
+    private String cloudinaryImagePublicId;
 
     //We can access User By Contact
     @ManyToOne
+    @JsonIgnore
     private User user;
 
     // This Field are used to Mapping Contact with the Social Links

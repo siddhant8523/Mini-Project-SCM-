@@ -15,10 +15,13 @@ public class UserController {
 
     private Logger logger=LoggerFactory.getLogger(UserController.class);
     
+
+
     @RequestMapping(value="/dashboard")
     public String userDashboard(){
         return "user/dashboard";
     }
+
 
     @RequestMapping(value="/profile")
     public String userProfile(Model model,Authentication authentication) {
